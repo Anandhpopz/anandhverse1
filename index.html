@@ -1,177 +1,424 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website - Easy Tutorials</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-</head>
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="login.png" class="logo" alt="Logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i></li>
-                </ul>
-                <div id="menu-icon-container" class="top-right">
-                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-                  </div>
-                
-            </nav>
-<div class="header-text">
-<p>Data Analyst</p>
-<h1>Hy,I'm <span>Anandha Krishnan</span><br> From India</h1>
-        </div>
-    </div>
-
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="that.png">
-            </div>
-            <div class="about-col-2">
-               <h1 class="subtitle">About Me</h1>
-<p>Seeking a challenging career with a reputable organization that provides an
-opportunity to revamp my technical skills and ability in the field of
-Mathematics and Computer Science.
-A quick learner with necessary communication and leadership qualities also a friendly and cooperative person. Interested in volunteer work/community involvement, sports mainly football, and cricket, and music.</p>
-<div class="tab-titles">
-<p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-<p class="tab-links" onclick="opentab('certificates')">Certificates</p>
-<p class="tab-links" onclick="opentab('education')">Education</p>
-</div>
-<div class="tab-contents active-tab" id='skills'>
-<ul><li><span>UI/UX</span></br>design web app interfaces</li>
-<li><span>DATA ANALYST</span></br>Ability to uncover insights from large datasets</li>
-<li><span>MACHINE LEARNING</span></br>basic knowledge about ml and ai</li>
-</ul>
-</div>
-<div class="tab-contents" id='education'>
-<ul><li><span>MASTERS IN COMPUTER SCIENCE</span></br>Currently Persuing, at Sree Narayana College, Cherthala under University of
-Kerala</li>
-<li><span>BACHELORS IN MATHEMATICS </span></br>Passed with 7.2 CGPA, Studied at Sanatana Dharma College under University
-of Kerala  </li>
-<li><span>HIGH SCHOOL EDUCATION
-</span></br>Passed with 9.8 CGPA, Believers Church English Medium. The Central Board
-of Secondary Education</li>
-</ul>
-</div>
-<div class="tab-contents" id='certificates'>
-<ul><li><span>GOOGLE DATA ANALYTICS</span></br>Completed Google Data Analytics Professional Certificate, authorized by
-Google and offered through Coursera </li>
-<li><span>NATIONAL CADET CORPS</span></br>Passed the NCC Cadet ‘C’ Certificate Exam held in 2021, under the authority of
-Ministry of Defence, Government of India</li>
-<li><span>DATA SCIENCE PYTHON</span></br>Completed an online course Foundations of Data Science: K-Means Clustering
-in Python authorized by University of London, Goldsmiths, University of London
-and offered through Coursera .</li>
-</ul>
-</div>
-            </div>
-        </div>
-    </div>
-</div>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/* Apply smooth scroll behavior to the entire page */
+html {
+  scroll-behavior: smooth;
+}
+/* Add this CSS to create a visual divider between sections */
 
 
-<div id="contact" style="display: flex; justify-content: space-between;">
-  <div class="container" style="flex: 1;">
-    <div class="row">
-      <div class="contact-left">
-        <h1 class="sub-title">Contact Me</h1>
-        <p><i class="fas fa-paper-plane"></i> anandhakrishnanalpy@gmail.com</p>
-        <p><i class="fas fa-phone-square-alt"></i> 7356218038</p>
-        <div class="social-icons">
-          <a href="https://m.facebook.com/Anandhuzz"><i class="fab fa-facebook"></i></a>
-          <a href="https://twitter.com/An_and_h"><i class="fab fa-twitter-square"></i></a>
-          <a href="https://www.instagram.com/_.an._.and._/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/anandha-krishnan-s-61394a275/"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <a href="my-cv1.pdf" download class="btn btn-rectangular">Download CV</a>
-      </div>
-    </div>
-  </div>
-  <div style="flex: 1;">
-    <form name='submit-to-google-sheet'>
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-      <button type="submit" class="btn btn-rectangular">Submit</button>
-    </form>
-	<span id="msg"></span>
-  </div>
-</div>
-<footer class="copyright">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <p>&copy; 2023 ANANDHVERSE. All Rights Reserved.</p>
-        <p>Designed with <i class="fas fa-heart"></i> by ANANDHA KRISHNAN S</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
-<script>
-var tablinks = document.getElementsByClassName('tab-links');
-var tabcontents = document.getElementsByClassName('tab-contents');
-
-function opentab(tabname) {
-  for (tablink of tablinks) {
-    tablink.classList.remove("active-link");
-  }
-  for (tabcontent of tabcontents) {
-    tabcontent.classList.remove("active-tab");
-  }
-event. currentTarget.classList. add("active-link");
-document. getElementById(tabname).classList.add("active-tab")
+/* Style the scroll bar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-// You don't need to redeclare tablinks here.
-</script>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxHLbdkcNR05raeBOASmQYNtzdgdA2_52Dop50QpG4bTTS0cCTfPqZ_nEdmBvPdN4ybbw/exec';
-  const form = document.forms['submit-to-google-sheet'];
-  const msg = document.getElementById("msg");
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        if (response.ok) {
-          msg.innerHTML = "Message sent successfully";
-          setTimeout(function () {
-            msg.innerHTML = "";
-          }, 5000);
-          form.reset();
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-      });
-  });
-</script>
-<script>
-  var sidemenu = document.getElementById("sidemenu")
-  function openmenu() {
-  sidemenu.style.right = "0";
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-function closemenu() {
-  sidemenu.style.right = "-200px"; // Adjust the value as needed
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }
 
-</script>
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
-</body>
-</html>
+
+body {
+  background: #000000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('melcow.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.container{
+padding: 100px 5%;
+}
+
+nav{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+ }
+.logo {
+  width: 100px;
+  position: absolute;
+  
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+  
+}
+
+
+
+/* Position the navigation links to the top right */
+nav ul {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+}
+
+/* Style the navigation links */
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 20px; /* Adjust margin to separate the links */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #00ffff;
+  position: absolute;
+  right: 0; /* Position the underline to the right */
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.header-text {
+  margin-top: -20px; /* Adjust the margin-top for precise positioning */
+  margin-left: -60px; /* Move to the top-left corner */
+  font-size: 30px; /* Reduce the font size to your preferred value */
+  background-attachment: fixed;
+}
+
+.header-text h1 {
+  margin-top: 20px;
+  font-size: 50px; /* Reduce the font size to your preferred value */
+}
+
+.header-text span {
+  color: #00ffff;
+}
+
+/* Add this CSS for the stacked card animation */
+.section-card {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+#about {
+    padding: 50px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+flex-basis: 40%;
+}
+.about-col-1 img{
+width: 75%;
+border-radius: 15px;
+}
+.about-col-2{
+flex-basis: 60%;
+}
+.subtitle{
+font-size: 50px;
+font-weight: 500;
+color: #fff;
+ }
+.tab-titles{
+display: flex;
+margin: 20px 0 40px;
+ }
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+/* Add this CSS code to position the globe icon to the top-right corner */
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.tab-links::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #00ffff;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.55s; /* Added 's' for seconds */
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+.tab-contents ul li span
+{
+color:#9CE4DD;
+font-size:14px;
+}
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+/* -----------------contact---------------- */
+
+/* Center-align the content in both .contact-left and .contact-right */
+.contact-left {
+  flex-basis: 60%;
+  margin-top: -150px;
+}
+
+.contact-right {
+  flex-basis: 30%;
+  margin-left: 200px;
+  margin-top: -70px;
+}
+
+.contact-left, .contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  text-align: left;
+}
+
+/* Update the margin for better spacing between elements */
+.contact-left p {
+  margin-top: 15px; /* Reduced margin-top */
+  color: #00ffff;
+  margin-bottom: 10px; /* Added margin-bottom */
+}
+
+/* Center-align the social icons */
+/* Center-align the social icons */
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the social icons */
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0 10px;
+  color: #ababab;
+  transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
+}
+
+/* Change color and apply a transformation on hover */
+.social-icons a:hover {
+  color: #00ffff; /* Change the color on hover */
+  transform: scale(1.1); /* Apply a slight scale (zoom) effect on hover */
+}
+
+
+
+/* Center-align the "Download CV" button */
+.btn-rectangular {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Added margin-top for spacing */
+}
+
+/* Change background color on hover */
+.btn-rectangular:hover {
+  background-color: #00ffff;
+}
+
+/* Center-align the form content */
+.contact-right form {
+  width: 100%;
+  
+}
+
+/* Center-align the form inputs and textarea */
+form input,
+form textarea {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 500px; /* Limit the maximum width */
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 20px;
+  margin: 15px 0; /* Center-align the inputs and textarea vertically */
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+/* ---------------Copyright Notice------------ */
+/* Copyright Notice */
+.copyright {
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 0; /* Adjust padding as needed */
+  text-align: center;
+  font-size: 14px;
+  margin: 0; /* Reset margin to ensure no external spacing */
+}
+
+
+.copyright a {
+  color: #00ffff; /* Link color */
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+/* Center the entire copyright notice */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container covers the full height */
+}
+#msg{color: #61b752;
+margin-top: 0px;
+display: block;
+}
+nav .fa-solid{
+  display: none;
+}
+/*-----------small screen----------*/
+@media only screen and (max-width: 600px)
+{
+#header {
+background-image: url(me.png);
+background-attachment: scroll;
+}
+.header-text{
+margin-top: 100%; 
+font-size: 16px;
+}
+.header-text h1{
+font-size: 20px;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 20px; /* Adjust margin to separate the links */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+.sub-title{
+font-size: 10px;
+}
+.about-col-1, about -col-2 
+{
+flex-basis: 100%;
+}
+nav .fa-solid{
+  display: block;
+  font-size: 25px;
+}
+nav ul{
+  background: #01076d;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  padding-top: 50px;
+  z-index: 2;
+}
+nav ul li{
+  display: block;
+  margin: 25px;
+}
+nav ul .fa-solid{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  cursor: pointer;
+}
+.contact-left, .contact-right {
+
+  flex-basis: 60%;
+  align-items:start; /* Center-align items */
+  text-align: center; /* Center-align text */
+}
+#contact {
+  flex-direction:column;
+}
+}
+.sub-title{
+  font-size: 30px;
+}
+form input,
+form textarea {
+  width: 70%; /* Adjust the width as needed */
+  max-width: 250px; /* Limit the maximum width */
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 10px;
+  margin-bottom: 20px; /* Center-align the inputs and textarea vertically */
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
