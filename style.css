@@ -8,6 +8,9 @@
 html {
   scroll-behavior: smooth;
 }
+/* Add this CSS to create a visual divider between sections */
+
+
 
 /* Style the scroll bar */
 ::-webkit-scrollbar {
@@ -40,12 +43,13 @@ body {
   box-sizing: border-box;
 }
 
+
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url('melcow.png');
-    background-size: cover;
+    background-image: url('images/melcow.png');
     background-attachment: fixed;
+    background-size: cover;
     background-position: center;
 }
 .container{
@@ -61,8 +65,10 @@ flex-wrap: wrap;
 .logo {
   width: 100px;
   position: absolute;
+  
   top: 10px; /* Adjust the top position as needed */
   left: 10px; /* Adjust the left position as needed */
+  
 }
 
 
@@ -107,6 +113,7 @@ nav ul li a:hover::after {
   margin-top: -20px; /* Adjust the margin-top for precise positioning */
   margin-left: -60px; /* Move to the top-left corner */
   font-size: 30px; /* Reduce the font size to your preferred value */
+  background-attachment: fixed;
 }
 
 .header-text h1 {
@@ -118,6 +125,22 @@ nav ul li a:hover::after {
   color: #00ffff;
 }
 
+/* Add this CSS for the stacked card animation */
+.section-card {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
 
 #about {
     padding: 50px 0;
@@ -144,11 +167,6 @@ font-size: 50px;
 font-weight: 500;
 color: #fff;
  }
-.top-right {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
 .tab-titles{
 display: flex;
 margin: 20px 0 40px;
@@ -159,6 +177,12 @@ margin: 20px 0 40px;
   font-weight: 500;
   cursor: pointer;
   position: relative;
+}
+/* Add this CSS code to position the globe icon to the top-right corner */
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
 
 .tab-links::after {
@@ -274,10 +298,12 @@ form textarea {
 .copyright {
   background-color: #333; /* Background color */
   color: #fff; /* Text color */
-  padding: -1000px 10; /* Adjust padding as needed */
+  padding: 10px 0; /* Adjust padding as needed */
   text-align: center;
   font-size: 14px;
+  margin: 0; /* Reset margin to ensure no external spacing */
 }
+
 
 .copyright a {
   color: #00ffff; /* Link color */
@@ -306,7 +332,7 @@ nav .fa-solid{
 @media only screen and (max-width: 600px)
 {
 #header {
-background-image: url(that.png);
+background-image: url(images/me.png);
 background-attachment: scroll;
 }
 .header-text{
@@ -372,5 +398,16 @@ nav ul .fa-solid{
 .sub-title{
   font-size: 30px;
 }
-
+form input,
+form textarea {
+  width: 70%; /* Adjust the width as needed */
+  max-width: 250px; /* Limit the maximum width */
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 10px;
+  margin-bottom: 20px; /* Center-align the inputs and textarea vertically */
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
 }
