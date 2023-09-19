@@ -335,7 +335,7 @@ nav .fa-solid{
 @media only screen and (max-width: 600px)
 {
 #header {
-background-image: url(images/me.png);
+background-image: url(me.png);
 background-attachment: scroll;
 }
 .header-text{
