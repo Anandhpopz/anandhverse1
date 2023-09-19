@@ -359,6 +359,18 @@ nav ul .fa-solid{
   left: 25px;
   cursor: pointer;
 }
+.contact-left, .contact-right {
 
+  flex-basis: 60%;
+  align-items:start; /* Center-align items */
+  text-align: center; /* Center-align text */
+}
+#contact {
+  flex-direction:column;
+}
+}
+.sub-title{
+  font-size: 30px;
+}
 
 }
